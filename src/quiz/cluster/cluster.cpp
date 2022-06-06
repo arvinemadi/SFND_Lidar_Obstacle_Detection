@@ -1,5 +1,11 @@
-/* \author Aaron Brown */
-// Quiz on implementing simple RANSAC line fitting
+//This is originally from Udacity - author mentioned below
+// /* \author Aaron Brown */
+//This file is part of a sensor fusion project
+//This file task is creating sample data and visuallization
+// Also a function for clustering algorithm is implemented using the binary tree structure that is implemented in kdtree.h
+// This file can also be used a simple example for using PCL library for visuallization
+
+
 
 #include "../../render/render.h"
 #include "../../render/box.h"
@@ -32,8 +38,7 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr CreateData(std::vector<std::vector<float>> p
   		point.x = points[i][0];
   		point.y = points[i][1];
   		point.z = 0;
-
-  		cloud->points.push_back(point);
+        cloud->points.push_back(point);
 
   	}
   	cloud->width = cloud->points.size();
@@ -44,7 +49,7 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr CreateData(std::vector<std::vector<float>> p
 }
 
 
-void render2DTree(Node* node, pcl::visualization::PCLVisualizer::Ptr& viewer, Box window, int& iteration, uint depth=0)
+void render2DTree(Node* node, pcl::visualization::PCLVisualizer::Ptr& viewer, Box window, int& iteration, int depth=0)
 {
 
 	if(node!=NULL)
@@ -75,15 +80,41 @@ void render2DTree(Node* node, pcl::visualization::PCLVisualizer::Ptr& viewer, Bo
 
 }
 
+//Depth First Search
+void FindProximity(const std::vector<std::vector<float>>& points, int point_id, std::vector<int>& cluster, std::vector<bool>& visited, float distanceTol, KdTree* tree)
+{
+    visited[point_id] = true;
+    cluster.push_back(point_id);
+    std::vector<int> nearbyPoints = tree->search(points[point_id], distanceTol);
+    
+    for (int id : nearbyPoints)
+    {
+        if (!visited[id])
+            FindProximity(points, id, cluster, visited, distanceTol, tree);
+    }
+    return;
+}
+
 std::vector<std::vector<int>> euclideanCluster(const std::vector<std::vector<float>>& points, KdTree* tree, float distanceTol)
 {
-
 	// TODO: Fill out this function to return list of indices for each cluster
+    std::vector<std::vector<int>> clusters;
+    int n = points.size();
+    std::vector<bool> visited (n, false);
 
-	std::vector<std::vector<int>> clusters;
- 
-	return clusters;
-
+    for (int i = 0; i < n; i++)
+    {
+        if (!visited[i]) 
+        {
+            std::vector<int> cluster;
+            FindProximity(points, i, cluster, visited, distanceTol, tree);
+            cout << "Here is a cluster:" << endl;
+            for (int pp : cluster)
+                cout << pp << endl;
+            clusters.push_back(cluster);
+        }
+    }
+    return clusters;
 }
 
 int main ()
