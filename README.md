@@ -1,6 +1,8 @@
 # Sensor Fusion Self-Driving Car Course
 
 <img src="media/ObstacleDetectionFPS.gif" width="700" height="400" />
+<img src="media/dataset_1.png" width="700" height="400" />
+<img src="media/dataset_2.gif" width="700" height="400" />
 
 Uncompleted project and data from: https://github.com/udacity/SFND_Lidar_Obstacle_Detection.git
 Udacity sensor fusion project for Lidar.
