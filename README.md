@@ -22,9 +22,7 @@ To install on windows:
 
 I had to fix several issues along the way, you can contact me if there was a problem.
 
-### Code for binary search using 3D Kd-Tree structure for nearest neighbours search has been implemented
-
-### Code for RANSAC has been implemented
+### Procedure
 
 The procedure is as follows:
 
@@ -34,4 +32,5 @@ At each Frame:
 - Segmentation: Separate road point cloud from the rest of cloud points. Left with road and obstacles clouds. (RANSAC used)
 - Cluster the obstacle cloud. Each object to be assigned to a cluster and a bonding box that shows its range of points. (Binary search and KdTree is used)
 
+Segmentation and clustering can be done using PCL library but for the purpose of this project, these have been implemented separately in ransac3D.h and kdtree3D.h
 
