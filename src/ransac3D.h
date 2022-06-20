@@ -1,6 +1,6 @@
+/*Code completed by Arvin.Emadi@Gmail.com*/
 //Original author of base code is referenced below - This is part of a Udacity sensor fusion project
 // this 3D RANSAC algithm is implemented by Arvin.Emadi@Gmail.com
-
 /* \author Aaron Brown */
 // using templates for processPointClouds so also include .cpp to help linker
 

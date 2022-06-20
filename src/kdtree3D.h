@@ -1,5 +1,5 @@
 //Completed by Arvin.Emadi@Gmail.com 
-// Example code and quiz from Udacity for a sensor fusion project
+// Example code from Udacity for a sensor fusion project
 // Many leetcode tree examples are similar to this type of tree traversal
 // The use of this is for quick search of neighbour pixels in a cloud of pixels
 // Brute force approach is to go through all the points and check them one by one
@@ -14,7 +14,6 @@
 #include <unordered_set>
 
 // PCL lib Functions for processing point clouds 
-
 #include <pcl/io/pcd_io.h>
 #include <pcl/common/common.h>
 #include <pcl/filters/extract_indices.h>
@@ -41,7 +40,6 @@ template<typename T>
 struct Node
 {
 	T point;
-	//std::vector<float> point;
 	int id;
 	Node* left;
 	Node* right;
@@ -202,12 +200,6 @@ struct KdTree
 		}
 		return clusters;
 	}
-
-
-
-
 };
-
-
 #endif
 
