@@ -5,7 +5,7 @@ Sensor Fusion Lidar obstacle detection project
 <img src="media/dataset_1.png" width="700" height="400" />
 <img src="media/dataset_2.gif" width="700" height="400" />
 
-Two complete this project several tasks needed to be completed.
+To complete this project several tasks needed to be completed.
 - Voxel filtering of the Lidar point cloud.
 - Segementation of the road from the rest of Lidar point cloud. A RANSAC algorithm has been implemented to do this job.
 - Clustering of the Lidar point clouds so that objects can be identified and bounding boxes can be placed around each obstacle (car, tree, traffic signs, etc)
@@ -38,11 +38,12 @@ Instructions to install on windows:
 
 I had to fix several issues along the way, you can contact me if there was a problem.
 
-### Procedure
+### Code for binary search using 3D Kd-Tree structure for nearest neighbours search has been implemented
+
+### Code for RANSAC has been implemented
 
 The procedure is as follows:
 
 
 
-Segmentation and clustering can be done using PCL library but for the purpose of this project, these have been implemented separately in ransac3D.h and kdtree3D.h
 
