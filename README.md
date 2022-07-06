@@ -1,11 +1,26 @@
-# Sensor Fusion Self-Driving Car Course
+# Sensor Fusion Self-Driving Car Course - COMPLETED PROJECT
 
+Sensor Fusion Lidar obstacle detection project
 <img src="media/ObstacleDetectionFPS.gif" width="700" height="400" />
 <img src="media/dataset_1.png" width="700" height="400" />
 <img src="media/dataset_2.gif" width="700" height="400" />
 
-Uncompleted project and data from: https://github.com/udacity/SFND_Lidar_Obstacle_Detection.git
-Udacity sensor fusion project for Lidar.
+Two complete this project several tasks needed to be completed.
+- Voxel filtering of the Lidar point cloud.
+- Segementation of the road from the rest of Lidar point cloud. A RANSAC algorithm has been implemented to do this job.
+- Clustering of the Lidar point clouds so that objects can be identified and bounding boxes can be placed around each obstacle (car, tree, traffic signs, etc)
+Clustering is done by implemeting kNN using kd-Tree structures.
+
+The codes in processPointClouds.cpp, ProcessPointClouds.h, ransac3D.h, kdtree3D.h have been completed in this project. The envoronment.cpp has several visualization features that can be modified for a different experience if desired.
+
+At each Frame:
+- Read the point cloud
+- Downsample the cloud by Voxel filtering
+- Segmentation: Separate road point cloud from the rest of cloud points. Left with road and obstacles clouds. (RANSAC used)
+- Cluster the obstacle cloud. Each object to be assigned to a cluster and a bonding box that shows its range of points. (Binary search and KdTree is used)
+
+---
+The base and data from Udacity at: https://github.com/udacity/SFND_Lidar_Obstacle_Detection
 
 To install on windows:
 
@@ -28,10 +43,6 @@ I had to fix several issues along the way, you can contact me if there was a pro
 
 The procedure is as follows:
 
-At each Frame:
-- Read the point cloud
-- Downsample the cloud by Voxel filtering
-- Segmentation: Separate road point cloud from the rest of cloud points. Left with road and obstacles clouds. (RANSAC used)
-- Cluster the obstacle cloud. Each object to be assigned to a cluster and a bonding box that shows its range of points. (Binary search and KdTree is used)
+
 
 
