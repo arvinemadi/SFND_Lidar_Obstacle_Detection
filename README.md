@@ -38,11 +38,6 @@ Instructions to install on windows:
 
 I had to fix several issues along the way, you can contact me if there was a problem.
 
-### Code for binary search using 3D Kd-Tree structure for nearest neighbours search has been implemented
-
-### Code for RANSAC has been implemented
-
-The procedure is as follows:
 
 
 
