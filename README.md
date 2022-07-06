@@ -20,18 +20,19 @@ At each Frame:
 - Cluster the obstacle cloud. Each object to be assigned to a cluster and a bonding box that shows its range of points. (Binary search and KdTree is used)
 
 ---
+
 The base and data from Udacity at: https://github.com/udacity/SFND_Lidar_Obstacle_Detection
 
-To install on windows:
+Instructions to install on windows:
 
 0. Install cvpkg
 1. Istall PCL: e.g. https://pointclouds.org/downloads/
 2. Clone this github repo
 3. Use the same CMake list here
-4. Install Visual Studio
+4. Install Visual Studio 
 5. Follo these in shell:
    cd ~/SFND_Lidar_Obstacle_Detection
-   mkdir build && cd build
+   mkdir build ... and then cd build
    cmake ..
 6. Now project file is open and ready to open in Visual Studio
 
